@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
-import ImageResultData from 'interfaces/ImageResultData'
 import Image from 'next/image'
+import ImageResultData from 'interfaces/ImageResultData'
 
 export default function ImageResult({ image }: { image: ImageResultData }) {
   return (

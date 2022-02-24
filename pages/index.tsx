@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
-import ImageResult from 'components/ImageResult'
-import ImageResultData from 'interfaces/ImageResultData'
 import Head from 'next/head'
 import { useState } from 'react'
+import ImageResult from 'components/ImageResult'
+import ImageResultData from 'interfaces/ImageResultData'
 import { queryApi } from 'utils/api'
 
 function Home() {

@@ -3,6 +3,7 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
+    'next/core-web-vitals',
     'airbnb',
     'airbnb-typescript',
     'plugin:react/jsx-runtime',
@@ -35,7 +36,7 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['**/*.{test,spec}.ts', 'test/**/*'],
+        devDependencies: ['**/*.{test,spec}.ts', 'test/**/*', 'mocks/**/*'],
       },
     ],
 

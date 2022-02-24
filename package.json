@@ -6,7 +6,7 @@
     "build": "next build",
     "dev": "next dev",
     "format": "prettier ./ --write",
-    "lint": "next lint",
+    "lint": "eslint . --cache --fix",
     "prepare": "husky install",
     "start": "next start"
   },

@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import CssBaseline from '@mui/material/CssBaseline'
 import type { AppProps } from 'next/app'
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
@@ -7,7 +7,12 @@ if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp

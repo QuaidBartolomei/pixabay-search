@@ -19,6 +19,7 @@ module.exports = {
     'no-promise-executor-return': 'off',
     'consistent-return': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/jsx-no-bind': 'off',
     '@typescript-eslint/require-await': 'error',
     '@typescript-eslint/await-thenable': 'error',
 

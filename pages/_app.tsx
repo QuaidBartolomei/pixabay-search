@@ -1,4 +1,6 @@
 import CssBaseline from '@mui/material/CssBaseline'
+import { Provider } from 'react-redux'
+import { store } from 'app/store'
 import type { AppProps } from 'next/app'
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
@@ -9,8 +11,11 @@ if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <CssBaseline />
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </Provider>
+      ,
     </>
   )
 }

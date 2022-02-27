@@ -1,14 +1,11 @@
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import Head from 'next/head'
-import { useState } from 'react'
 import ImageResult from 'components/ImageResult'
-import SearchBar from 'components/SearchBar'
-import ImageResultData from 'interfaces/ImageResultData'
+import ImageSearchQueryInput from 'features/image-search/ImageSearchQueryInput'
 
+const imageResults: { id: string; previewURL: string }[] = []
 export default function Home() {
-  const [imageResults, setImageResults] = useState<ImageResultData[]>([])
-
   return (
     <>
       <Head>
@@ -28,7 +25,7 @@ export default function Home() {
           bgcolor: 'green',
         }}
       >
-        <SearchBar onResults={setImageResults} />
+        <ImageSearchQueryInput />
 
         <Box
           sx={{

@@ -1,22 +1,12 @@
-import { Button } from '@mui/material'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
-import { useState } from 'react'
-import ImageResultData from 'interfaces/ImageResultData'
-import { queryApi } from 'utils/api'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from 'app/store'
+import { setQuery } from './imageSearchSlice'
 
-export type SearchBarProps = {
-  onResults: (imageResults: ImageResultData[]) => void
-}
-
-export default function SearchBar({ onResults }: SearchBarProps) {
-  const [query, setQuery] = useState('')
-
-  async function handleSearch() {
-    const data = await queryApi(query)
-    const images = data.hits
-    onResults(images)
-  }
+export default function ImageSearchQueryInput() {
+  const query = useSelector((state: RootState) => state.imageSearch.query)
+  const dispatch = useDispatch()
 
   return (
     <Box
@@ -33,11 +23,11 @@ export default function SearchBar({ onResults }: SearchBarProps) {
         id="outlined-basic"
         label="Outlined"
         variant="outlined"
+        value={query}
         onChange={(e) => {
-          setQuery(e.target.value)
+          dispatch(setQuery(e.target.value))
         }}
       />
-      <Button onClick={handleSearch}>Search</Button>
     </Box>
   )
 }

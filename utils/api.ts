@@ -1,7 +1,7 @@
 import axios from 'axios'
 import ImageResultData from 'interfaces/ImageResultData'
 
-const host = 'https://pixabay.com/api/'
+const host = 'api/images'
 
 type Data = {
   hits: ImageResultData[]

@@ -23,6 +23,12 @@ module.exports = {
     '@typescript-eslint/require-await': 'error',
     '@typescript-eslint/await-thenable': 'error',
 
+    // required for immer
+    'no-param-reassign': [
+      'error',
+      { props: true, ignorePropertyModificationsForRegex: ['^draft'] },
+    ],
+
     // naming conventions
     camelcase: 'off',
     '@typescript-eslint/naming-convention': [

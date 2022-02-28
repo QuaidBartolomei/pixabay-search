@@ -1,4 +1,4 @@
-import { Stack } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { selectImageSearchQuery } from 'app/store'
 import { useGetImagesByNameQuery } from 'services/images'
@@ -13,16 +13,29 @@ export default function ImageSearchResultsGrid() {
   if (error || !data) return <div>error</div>
 
   return (
-    <Stack
+    <Box
       sx={{
+        p: 2,
         overflowY: 'auto',
-        bgcolor: 'red',
         width: '100%',
       }}
-      direction="column"
     >
-      {data &&
-        data.hits.map((image) => <ImageResult key={image.id} image={image} />)}
-    </Stack>
+      <Grid container spacing={2}>
+        {data.hits.map((image) => (
+          <Grid
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            item
+            xs={4}
+          >
+            <ImageResult key={image.id} image={image} />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   )
 }

@@ -10,13 +10,10 @@ if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Provider store={store}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </Provider>
-      ,
-    </>
+    <Provider store={store}>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </Provider>
   )
 }
 

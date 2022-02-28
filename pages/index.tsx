@@ -1,10 +1,8 @@
 import Box from '@mui/material/Box'
-import Stack from '@mui/material/Stack'
 import Head from 'next/head'
-import ImageResult from 'features/image-search/ImageResult'
 import ImageSearchQueryInput from 'features/image-search/ImageSearchQueryInput'
+import ImageSearchResultsGrid from 'features/image-search/ImageSearchResultsGrid'
 
-const imageResults: { id: string; previewURL: string }[] = []
 export default function Home() {
   return (
     <>
@@ -26,21 +24,7 @@ export default function Home() {
         }}
       >
         <ImageSearchQueryInput />
-
-        <Box
-          sx={{
-            overflowY: 'auto',
-            flexGrow: 1,
-            bgcolor: 'red',
-            width: '100%',
-          }}
-        >
-          <Stack direction="column">
-            {imageResults.map((image) => (
-              <ImageResult key={image.id} image={image} />
-            ))}
-          </Stack>
-        </Box>
+        <ImageSearchResultsGrid />
       </Box>
     </>
   )

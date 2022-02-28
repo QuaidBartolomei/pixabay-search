@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import Head from 'next/head'
-import ImageResult from 'components/ImageResult'
+import ImageResult from 'features/image-search/ImageResult'
 import ImageSearchQueryInput from 'features/image-search/ImageSearchQueryInput'
 
 const imageResults: { id: string; previewURL: string }[] = []

@@ -20,7 +20,6 @@ export default function Home() {
           justifyContent: 'center',
           height: '100vh',
           width: '100vw',
-          bgcolor: 'green',
         }}
       >
         <ImageSearchQueryInput />

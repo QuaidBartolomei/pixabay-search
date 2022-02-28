@@ -25,8 +25,9 @@ export default function ImageSearchQueryInput() {
       direction="row"
       justifyContent="center"
       sx={{
-        m: 1,
+        p: 1,
         width: '100%',
+        bgcolor: 'lightgray',
       }}
     >
       <TextField

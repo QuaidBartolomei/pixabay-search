@@ -16,7 +16,12 @@ export const imagesAPI = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'api/' }),
   endpoints: (builder) => ({
     getImagesByName: builder.query<Images, string>({
-      query: (name) => `images/${name}`,
+      query: (name) => ({
+        url: 'images/',
+        params: {
+          q: name,
+        },
+      }),
     }),
   }),
 })

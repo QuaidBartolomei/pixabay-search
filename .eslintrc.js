@@ -22,6 +22,7 @@ module.exports = {
     'react/jsx-no-bind': 'off',
     '@typescript-eslint/require-await': 'error',
     '@typescript-eslint/await-thenable': 'error',
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
 
     // required for immer
     'no-param-reassign': [

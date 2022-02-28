@@ -11,7 +11,7 @@ export default interface Pixabay {
 // const host = 'api/images'
 
 // Define a service using a base URL and expected endpoints
-export const pixabayAPI = createApi({
+export const imagesAPI = createApi({
   reducerPath: 'pixabayAPI',
   baseQuery: fetchBaseQuery({ baseUrl: 'api/' }),
   endpoints: (builder) => ({
@@ -23,4 +23,4 @@ export const pixabayAPI = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetImagesByNameQuery } = pixabayAPI
+export const { useGetImagesByNameQuery } = imagesAPI

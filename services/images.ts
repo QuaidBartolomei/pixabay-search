@@ -1,7 +1,7 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-export default interface Pixabay {
+export default interface Images {
   hits: {
     id: string //
     previewURL: string
@@ -12,10 +12,10 @@ export default interface Pixabay {
 
 // Define a service using a base URL and expected endpoints
 export const imagesAPI = createApi({
-  reducerPath: 'pixabayAPI',
+  reducerPath: 'imagesAPI',
   baseQuery: fetchBaseQuery({ baseUrl: 'api/' }),
   endpoints: (builder) => ({
-    getImagesByName: builder.query<Pixabay, string>({
+    getImagesByName: builder.query<Images, string>({
       query: (name) => `images/${name}`,
     }),
   }),

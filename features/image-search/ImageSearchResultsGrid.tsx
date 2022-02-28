@@ -1,12 +1,11 @@
 import { Stack } from '@mui/material'
 import { useSelector } from 'react-redux'
-import { RootState } from 'app/store'
+import { selectImageSearchQuery } from 'app/store'
 import { useGetImagesByNameQuery } from 'services/images'
 import ImageResult from './ImageResult'
 
 export default function ImageSearchResultsGrid() {
-  // TODO: create reuseable selector
-  const query = useSelector((state: RootState) => state.imageSearch.query)
+  const query = useSelector(selectImageSearchQuery)
 
   const { data, error, isLoading } = useGetImagesByNameQuery(query)
 

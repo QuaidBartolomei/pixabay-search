@@ -1,11 +1,11 @@
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from 'app/store'
+import { selectImageSearchQuery } from 'app/store'
 import { setQuery } from './imageSearchSlice'
 
 export default function ImageSearchQueryInput() {
-  const query = useSelector((state: RootState) => state.imageSearch.query)
+  const query = useSelector(selectImageSearchQuery)
   const dispatch = useDispatch()
 
   return (

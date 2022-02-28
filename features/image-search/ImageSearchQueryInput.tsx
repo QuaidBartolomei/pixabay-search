@@ -11,7 +11,7 @@ export default function ImageSearchQueryInput() {
   return (
     <Box
       sx={{
-        height: 100,
+        m: 1,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',

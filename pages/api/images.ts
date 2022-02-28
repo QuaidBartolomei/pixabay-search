@@ -8,9 +8,8 @@ export default async function endpoint(
   request: NextApiRequest,
   response: NextApiResponse,
 ): Promise<void> {
-  const {
-    query: { q },
-  } = request
+  const { query } = request
+  const { q = '' } = query
 
   try {
     const res = await axios.get(host, { params: { key, q } })

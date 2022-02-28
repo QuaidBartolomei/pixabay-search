@@ -5,20 +5,20 @@ import { useDispatch } from 'react-redux'
 import ImageSearchButton from './ImageSearchButton'
 import { setQuery } from './imageSearchSlice'
 
-const delay = 500
+const delay = 2000
 
 export default function ImageSearchQueryInput() {
   const dispatch = useDispatch()
   const [value, setValue] = useState('')
+  const [handler, setHandler] = useState<NodeJS.Timeout | undefined>(undefined)
 
   useEffect(() => {
-    const handler = setTimeout(() => {
+    if (handler) clearTimeout(handler)
+    const h = setTimeout(() => {
       dispatch(setQuery(value))
     }, delay)
-    return () => {
-      clearTimeout(handler)
-    }
-  }, [dispatch, value])
+    setHandler(h)
+  }, [dispatch, value, setHandler])
 
   return (
     <Stack
@@ -35,7 +35,9 @@ export default function ImageSearchQueryInput() {
         label="Outlined"
         variant="outlined"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => {
+          setValue(e.target.value)
+        }}
       />
       <ImageSearchButton />
     </Stack>
